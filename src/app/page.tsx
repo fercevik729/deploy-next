@@ -8,7 +8,8 @@ async function getData() {
 }
 
 export default async function Home() {
-  const { tasks } = await getData();
+  //const { tasks } = await getData();
+  const tasks = [];
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
