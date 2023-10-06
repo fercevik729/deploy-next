@@ -8,8 +8,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  //const { tasks } = await getData();
-  const tasks = [];
+  const { tasks } = await getData();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -50,7 +49,10 @@ export default async function Home() {
       </div>
 
       {tasks.map((task) => (
-        <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
+        <div
+          key={task.id}
+          className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left"
+        >
           <h2 className={`mb-3 text-2xl font-semibold`}>
             {task.title}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
