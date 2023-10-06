@@ -1,5 +1,5 @@
 import Image from "next/image";
-import prisma from "@/lib/prisma";
+import prisma from "../lib/prisma";
 
 async function getData() {
   const tasks = await prisma.task.findMany();
