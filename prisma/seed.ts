@@ -1,23 +1,34 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 async function main() {
-  const first = await prisma.note.upsert({
+  const first = await prisma.task.upsert({
     where: { id: 1 },
     update: {},
     create: {
-      title: "First Post",
-      content: "Hi this is my first post",
+      title: "First task: learn Next.JS",
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
   });
-  const second = await prisma.note.upsert({
+  const second = await prisma.task.upsert({
     where: { id: 2 },
     update: {},
     create: {
-      title: "Second Post",
-      content: "I am learning Prisma, Next JS, & GraphQL",
+      title: "Second Task: learn GraphQL",
+      createdAt: new Date(),
+      updatedAt: new Date(),
     },
   });
-  console.log({ first, second });
+  const third = await prisma.task.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      title: "Third Task: learn AWS",
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+  console.log({ first, second, third });
 }
 main()
   .then(async () => {
