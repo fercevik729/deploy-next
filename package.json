@@ -21,9 +21,9 @@
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
-    "postcss": "^8",
+    "postcss": "^8.4.31",
     "prisma": "^5.4.1",
-    "tailwindcss": "^3",
+    "tailwindcss": "^3.3.3",
     "ts-node": "^10.9.1",
     "typescript": "^5"
   },
